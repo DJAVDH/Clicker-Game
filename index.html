@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clicker game</title>
+    <title>Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1>Clicker Game</h1>
+    <p>Score: <span id="score">0</span></p>
+    <p>epc: <span id="epc">1</span> <span id="multi">1x</span> <span id="total">(1)</span> </p>
+
+    <button id="clickButton">Klik hier!</button>
+    <button id="upgradeButton">upgrade: <span id="upgrade1">15</span></button>
+    <div id="multiupgrades">
+    <button id="doubleEpc">2x upgrade: <span id="upgrade2">100</span></button>
+    <button id="tripleEpc">3x upgrade:<span id="upgrade3">1000</span></button>
+    <button id="quadrupleEpc">4x upgrade:<span id="upgrade4">10000</span></button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

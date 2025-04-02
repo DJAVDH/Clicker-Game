@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin-top: 8%;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+h1 {
+    color: #333;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+button {
+    transition: background-color 0.2s ease;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #55bcf8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+button:hover {
+    background-color: #34759a;
+}
+
+button:active {
+    transform: translateY(3px); /* Moves the button down slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reduces shadow effect */
+}
+
+#multiupgrades{
+    position: absolute;
+    left: 20px; /* Adjust this value to move it further left or right */
+    top: 50%;
+    transform: translateY(-50%); /* Centers it vertically */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 0px; /* Adds space between buttons */
+}
+
+
+#multi{color: grey;}
