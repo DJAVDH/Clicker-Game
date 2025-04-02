@@ -21,12 +21,15 @@ function upd() { //update alles
     epcupgtotal = (0+epcupg)
     if (epcupg1 == true) {
         multi = 2
+        document.getElementById("multi").style.color = "lime"
     }
     if (epcupg2 == true) {
         multi = 3
+        document.getElementById("multi").style.color = "orange"
     }
     if (epcupg3 == true) {
         multi = 4
+        document.getElementById("multi").style.color = "red"
     }
     epc = (1+epcupgtotal)*multi
     document.getElementById("epc").textContent = epcupg+1; // Weergeven epc
