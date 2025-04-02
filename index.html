@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="topbar"></div>
+    <div id="rightbar"></div>
+    <div id="bottombar"></div>
+
     <h1>Clicker Game</h1>
-    <p>Score: <span id="score">0</span></p>
-    <p>epc: <span id="epc">1</span> <span id="multi">1x</span> <span id="total">(1)</span> </p>
+    <p id="scoreboard">Score: <span id="score">0</span></p>
+    <p id="epcdisplay">epc: <span id="epc">1</span> <span id="multi">1x</span> <span id="total">(1)</span> </p>
 
     <button id="clickButton">Klik hier!</button>
     <button id="upgradeButton">upgrade: <span id="upgrade1">15</span></button>
@@ -18,7 +22,7 @@
     <button id="tripleEpc">3x upgrade:<span id="upgrade3">1000</span></button>
     <button id="quadrupleEpc">4x upgrade:<span id="upgrade4">10000</span></button>
     </div>
-
+    <button id="flip" onclick="coinflip()"><img id="coin" src="fotos/munt.png"></button>
     <script src="script.js"></script>
 </body>
 </html>

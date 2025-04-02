@@ -5,19 +5,83 @@
 
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
+    background-color: #8E7272;
     margin-top: 8%;
 }
 
-p{
-    font-size: 1.5rem;
+
+#topbar{
+    background-color: #405C37;
+    width: 75vw;
+    height: 9.49vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#rightbar{
+    left: 75vw;
+    top: 0;
+    position: fixed;
+    width: 25vw;
+    height: 100vh;
+    background-color: #4C2E05;
+}
+#bottombar{
+    position: fixed;
+    left: 0;
+    top: 85vh;
+    width: 75vw;
+    height: 15vw;
+    background-color: #4C2E05;
+}
+
+#clickButton{
+    position: fixed;
+    left: calc(37.5vw - 7.5vw);
+    top: calc(9.5vh + (105vh - 9.5vh - 15vw) / 2 - 7.5vw);
+    width: 15vw;  
+    height: 15vw; 
+    border-radius: 50%;
+    background-color: black;;
+    font-size: 3vw; 
 }
 
 h1 {
+    position:absolute;
+    margin-left: 2vh;
+    top: 1.5vh;
     color: #333;
-    font-size: 3rem;
+    font-size: 5.5vh;
     margin-bottom: 15px;
+    color: white;
+}
+
+#scoreboard{
+    position: absolute;
+    top: 90vh;
+    left: 15vw;
+    color: white;
+    font-size: 5vh;
+}
+
+#epcdisplay{
+    position: absolute;
+    top: 2.3vh;
+    left: 23vw;
+    font-size: 4vh;
+    color: white;
+}
+
+#upgradeButton{
+    padding: 10px 60px;
+    position: absolute;
+    left: 80vw;
+    background-color: white;
+    color: black;
+}
+
+#upgradeButton:hover {
+    background-color: #979797;
 }
 
 button {
@@ -37,19 +101,41 @@ button:hover {
 }
 
 button:active {
-    transform: translateY(3px); /* Moves the button down slightly */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reduces shadow effect */
+    transform: translateY(3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 #multiupgrades{
     position: absolute;
-    left: 20px; /* Adjust this value to move it further left or right */
+    left: 20px; 
     top: 50%;
-    transform: translateY(-50%); /* Centers it vertically */
+    transform: translateY(-50%); 
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 0px; /* Adds space between buttons */
+    flex-direction: column; 
+    gap: 0px; 
 }
 
 
 #multi{color: grey;}
+
+#coin , #flip{
+    position: fixed;
+    bottom: 1vh; 
+    left: 68%;
+    width: 100px;
+    transform: translateX(-50%); 
+}
+
+#coin{
+    transition: transform 0.2s ease, filter 0.2s ease;
+
+}
+
+#coin:hover{
+    transform: translateY(10px) translateX(-50%); 
+    filter: brightness(0.7);
+}
+
+#flip{
+    padding: 0px;
+}

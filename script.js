@@ -21,15 +21,24 @@ function upd() { //update alles
     epcupgtotal = (0+epcupg)
     if (epcupg1 == true) {
         multi = 2
-        document.getElementById("multi").style.color = "lime"
+        document.getElementById("multi").style.color = "lime";
+        document.getElementById("topbar").style.backgroundColor = "#697A21"
+        document.getElementById("rightbar").style.backgroundColor = "#424B54"
+        document.getElementById("bottombar").style.backgroundColor = "#424B54"
     }
     if (epcupg2 == true) {
         multi = 3
         document.getElementById("multi").style.color = "orange"
+        document.getElementById("topbar").style.backgroundColor = "#124E78"
+        document.getElementById("rightbar").style.backgroundColor = "#57CC99"
+        document.getElementById("bottombar").style.backgroundColor = "#57CC99"
     }
     if (epcupg3 == true) {
         multi = 4
         document.getElementById("multi").style.color = "red"
+        document.getElementById("topbar").style.backgroundColor = "#8F5C38"
+        document.getElementById("rightbar").style.backgroundColor = "#ECE4B7"
+        document.getElementById("bottombar").style.backgroundColor = "#ECE4B7"
     }
     epc = (1+epcupgtotal)*multi
     document.getElementById("epc").textContent = epcupg+1; // Weergeven epc
@@ -37,6 +46,20 @@ function upd() { //update alles
     document.getElementById("multi").textContent = (multi+"x"); // Weergeven epc
     document.getElementById("total").textContent = ("("+epc+")")
 }
+
+
+function coinflip(){
+    let flip = Math.random() < 0.5 ? 'kop' : 'munt';
+    if (flip === 'kop'){
+        score = score*2 
+    } else{
+        score = Math.round(score-score/1.5)
+    }
+    upd()
+};
+
+
+
 
 document.getElementById("clickButton").addEventListener("click", function() {  //CLICK FUNCTION
     score=score+epc; // Score verhogen
