@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.achtergrond{
+    z-index: -1;
+    position: absolute;
+    top: 10vh;
+    height: 0;
+    width: 70vw;
+    height: 80vh;
+}
+
+#topbar{
+    position: absolute;
+    top: 0;
+    height: 0;
+    width: 70vw;
+    height: 10vH;
+    background-color: #405C37;
+}
+
+#sidebar{
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 30vw;
+    height: 100vh;
+    background-color: #4C2E05;
+}
+
+#bottombar{
+    bottom: 0;
+    left: 0;
+    width: 70vw;
+    height: 10vh;
+    background-color: #4C2E05;
+    position: absolute;
+}
