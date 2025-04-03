@@ -1,28 +1,3 @@
-let score = 0;
-//score
-let epcupg = 0;
-let epcupg1 = false;
-let epcupg2 = false;
-let epcupg3 = false;
-//upgrade kracht
-let prijsupg = 15;
-let prijsupg1 = 100;
-let prijsupg2 = 1000;
-let prijsupg3 = 10000;
-let prijsupgAuto = 100;
-let prijsupgSpeed = 1000;
-// upgrade prijzen
-let AutoEpcOn = false
-let AutoEpcValue = 0
-let AutoEpcValueTotal = 0
-let AutoEpcSpeed = 1
-let autoEpcInterval = null;
-//AutoEpc
-
-let epcupgtotal = 0 //total upgrade power
-let multi = 1
-let epc = 1
-
 upd()
 
 function upd() { //update alles/main ccode zodat alles werkt
@@ -105,7 +80,7 @@ document.getElementById("upgradeButton").addEventListener("click", function() { 
     if (score < prijsupg){  //als score lager dan prijs dan werkt niet
         return;
     }
-    epcupg++   ; // epcupg+1
+    epcupg += Upgradepower   ; // epcupg+1
     score -= prijsupg
     prijsupg=Math.round(prijsupg*1.1)
     upd()
@@ -156,7 +131,7 @@ document.getElementById("autoEpc").addEventListener("click", function() { //UPGR
         return;
     }
     score -= prijsupgAuto
-    AutoEpcValue += 5
+    AutoEpcValue += AutoEpcUpgradePower
     prijsupgAuto = Math.round(prijsupgAuto*1.05+50)
     if (AutoEpcValue > 0) {
         startAutoEpc(); // Start automatic scoring if not already running
