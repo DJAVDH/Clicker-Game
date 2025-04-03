@@ -72,28 +72,35 @@ h1 {
     color: white;
 }
 
-#upgradeButton{
-    padding: 10px 60px;
+
+#baseupgrades{
     position: absolute;
-    left: 80vw;
-    background-color: white;
+    right: 75px; 
+    top: 50%;
+    transform: translateY(-50%); 
+    display: flex;
+    flex-direction: column; 
+    gap: 0px;   
     color: black;
+
 }
 
-#upgradeButton:hover {
-    background-color: #979797;
+#baseupgrades button{
+color: black;
+background-color: white;
 }
+
 
 button {
     transition: background-color 0.2s ease;
     margin-top: 20px;
     font-size: 20px;
     padding: 10px 20px;
-    background-color: #55bcf8;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 50px;
+    background-color: turquoise;
 }
 
 button:hover {
@@ -112,11 +119,11 @@ button:active {
     transform: translateY(-50%); 
     display: flex;
     flex-direction: column; 
-    gap: 0px; 
+    gap: 0px;
 }
 
 
-#multi{color: grey;}
+#multi , #multi2 {color: grey;}
 
 #coin , #flip{
     position: fixed;
@@ -138,4 +145,12 @@ button:active {
 
 #flip{
     padding: 0px;
+}
+
+#AutoEpcDisplay{
+    position: absolute;
+    top: 2.3vh;
+    left: 38vw;
+    font-size: 4vh;
+    color: white;
 }
