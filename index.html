@@ -1,11 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clicker game</title>
+    <title>Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div id="topbar"></div>
+    <div id="rightbar"></div>
+    <div id="bottombar"></div>
+
+    <h1>Clicker Game</h1>
+
+    <!--INFO-->
+    <p id="scoreboard">Score: <span id="score">0</span></p>
+    <p id="epcdisplay">epc: <span id="epc">1</span> <span id="multi2">1x</span> <span id="total">(1)</span> </p>
+    <p id="AutoEpcDisplay">Auto: <span id="autoEpcValue">0</span> <span id="autospeed">/1s </span> <span id="multi">1x</span> <span id="totalAuto"> (0)</span></p>
+    <button id="clickButton">Klik hier!</button> <!--CLICK KNOP-->
+<!--Upgrades Rechts-->
+    <div id="baseupgrades">
+    <button id="upgradeButton">upgrade: <span id="upgrade1">15</span></button>
+    <button id="autoEpc">Auto epc: <span id="upgradeAuto">100</span></button>
+    <button id="autoEpcSpeed">Auto epc Speed: <span id="upgradeAutoSpeed">1000</span></button>
+    </div>
+<!--Upgrades Links-->
+    <div id="multiupgrades">
+    <button id="doubleEpc">2x upgrade: <span id="upgrade2">100</span></button>
+    <button id="tripleEpc">3x upgrade:<span id="upgrade3">1000</span></button>
+    <button id="quadrupleEpc">4x upgrade:<span id="upgrade4">10000</span></button>
+    </div>
+
+    <button id="flip" onclick="coinflip()"><img id="coin" src="fotos/munt.png"></button>
+    <script src="variables.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
