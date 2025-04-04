@@ -3,8 +3,15 @@
     margin: 0;
 }
 
+body{
+    font-family: "Inter", sans-serif;
+  }
 
-.achtergrond{
+p{
+    font-size: clamp(0px, 1vw + 1vh, 64px);
+}
+
+.Achtergrond{
     z-index: -1;
     position: absolute;
     top: 10vh;
@@ -13,7 +20,7 @@
     height: 80vh;
 }
 
-#topbar{
+#Topbar{
     position: absolute;
     top: 0;
     height: 0;
@@ -22,7 +29,7 @@
     background-color: #405C37;
 }
 
-#sidebar{
+#Sidebar{
     top: 0;
     right: 0;
     position: absolute;
@@ -31,11 +38,51 @@
     background-color: #4C2E05;
 }
 
-#bottombar{
+#Bottombar{
     bottom: 0;
     left: 0;
     width: 70vw;
     height: 10vh;
     background-color: #4C2E05;
     position: absolute;
+}
+
+#TierDisp{
+    left: 2vw;
+    top: 2.5vh;
+    color: white;
+    position: absolute;
+}
+
+#FoodDisp{
+    left: 20vw;
+    top: 2.5vh;
+    color: white;
+    position: absolute;  
+}
+
+#Multiplier{
+    left: 38vw;
+    top: 2.5vh;
+    color: white;
+    position: absolute; 
+}
+
+#EpcDisp{
+    left: 50vw;
+    top: 2.5vh;
+    color: white;
+    position: absolute; 
+}
+
+#MoneyDisp{
+    left: 72vw;
+    top: 2.5vh;
+    color: white;
+    position: absolute; 
+}
+
+#FoodClick{
+    width: 35vw;
+    height: 35vh;
 }
