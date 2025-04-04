@@ -9,18 +9,29 @@
     <title>Food clicker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oldenburg&display=swap" rel="stylesheet">
 </head>
 <body>
     <img class="Achtergrond" src="fotos/background 1.jpeg">
     <div id="Topbar"></div>
-    <div id="Sidebar"></div>
+    <div id="Sidebar">
+        <div id="InnerSidebar">
+            <p id="Upgrades">Upgrades</p>
+            <p id="EpcDisp"> <span id="Epc">1€</span>/ Click</p>
+            <button id="Upgrade1">
+                <img src="fotos/Pointing_hand_cursor_vector.svg.png" >
+            </button>
+        </div>
+    </div>
     <div id="Bottombar"></div>
     <p id="TierDisp">Tier: <span id="Tier">Zwerver</span></p>
     <p id="FoodDisp">Eten: <span id="Food">Prullenbak</span></p>
     <p id="Multiplier">1x boost</p>
-    <p id="EpcDisp">Euro per click: <span id="Epc">1</span></p>
     <p id="MoneyDisp">Euros: <span id="Money">0</span></p>
-    <button class="ClickButton"><img class="FoodClick" src="fotos/afvalcontainer-removebg-preview.png"></button>
+    <button class="ClickButton" onclick="clickfood()"><img class="FoodClick" src="fotos/afvalcontainer-removebg-preview.png"></button>
+
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/buttons.js" defer></script>
 </body>
 </html>
