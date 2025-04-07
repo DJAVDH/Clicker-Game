@@ -18,9 +18,43 @@
         <div id="InnerSidebar">
             <p id="Upgrades">Upgrades</p>
             <p id="EpcDisp"> <span id="Epc">1€</span>/ Click</p>
-            <button id="Upgrade1">
+
+            <div class="UpgradeContainer">
+                <p class="OneClick">+1€/Click</p>
+            <button class="Upgrade" onclick="buyupgrade1()">
                 <img src="fotos/Pointing_hand_cursor_vector.svg.png" >
+                    <span class="Price" id="Price1">50€</span> 
+                    <span class="Amount"id="Amount1">0</span> </p>         
             </button>
+            </div>
+
+            <div class="UpgradeContainer">
+                <p class="OneClick">+5€/Click</p>
+            <button class="Upgrade" onclick="buyupgrade2()">
+                <img src="fotos/Pointing_hand_cursor_vector.svg.png" >
+                    <span class="Price" id="Price2">500€</span> 
+                    <span class="Amount"id="Amount2">0</span> </p>         
+            </button>
+            </div>
+
+            <div class="UpgradeContainer">
+                <p class="OneClick">+5€/Sec</p>
+            <button class="Upgrade" onclick="buyupgrade3()">
+                <img src="fotos/tandwiel.png" >
+                    <span class="Price" id="Price3">50€</span> 
+                    <span class="Amount"id="Amount3">0</span> </p>         
+            </button>
+            </div>
+
+            <div class="UpgradeContainer">
+                <p class="OneClick">-0.1Sec Autoclick</p>
+            <button class="Upgrade" onclick="buyupgrade4()">
+                <img src="fotos/tandwiel.png" >
+                    <span class="Price" id="Price4">50€</span> 
+                    <span class="Amount" id="Amount4">0</span> </p>         
+            </button>
+            </div>
+
         </div>
     </div>
     <div id="Bottombar"></div>
