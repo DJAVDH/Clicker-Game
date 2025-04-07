@@ -4,6 +4,11 @@ function clickfood(){
     upd("money")
 }
 
+function openmenu(){
+    const slideMenu = document.getElementById('FoodMenu');
+    slideMenu.classList.toggle('open');
+};
+
 function buyupgrade1(){
     if (money<prijs1){
         return;

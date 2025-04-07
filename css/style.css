@@ -8,6 +8,7 @@ body{
         font-family: "Oldenburg", serif;
         font-weight: 400;
         font-style: normal;
+        z-index: 1;
   }
 
 p{
@@ -198,3 +199,53 @@ p{
     transform: translateY(15px);
     filter: brightness(50%);
 }
+
+#FoodMenu {
+    position: fixed;
+    top: 0;
+    left: -25vw; 
+    width: 25vw;
+    height: 100%;
+    background-color: #334A2C;
+    color: white;
+    transition: left 0.3s ease-in;
+  }
+  
+  #FoodMenu.open {
+    left: 0;
+  }
+  
+  #HamburgerMenu{
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  #Hamburger{
+    z-index: 3;
+    position: absolute;
+    max-width: 10vh;
+    bottom: 0;
+    margin-left: 1vw;
+  }
+  
+  #slideButton:hover {
+    background-color: #0056b3;
+  }
+  
+  #FoodMenu > p {
+    position: relative;
+    left: 8vw;
+  }
+
+  #InnerFoodMenu{
+    margin-left: 1vw;
+    margin-top: 2.5vh;
+    width: 23vw;
+    height: 95vh;
+    background-color: #6A9C5C;
+  }
+
+
+
