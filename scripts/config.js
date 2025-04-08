@@ -1,3 +1,6 @@
+
+//Main variables en getallen hier
+
 let money = 0
 //Je geld
 let prijs1 = 50
@@ -12,6 +15,10 @@ let amount4 = 0
 //Hoveel Upgrades je hebt
 let foodmulti = 1
 //FoodMultis
+const eetgeluid = ("sfx/eet.mp3")
+const slidegeluid = ("sfx/slide.mp3")
+const upgradegeluid = ("sfx/upgrade.mp3")
+//sounds
 
 function formatMoney(amount) { //Trillion billion million thousand
     if (amount >= 1e12) {

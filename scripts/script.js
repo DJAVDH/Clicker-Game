@@ -1,3 +1,7 @@
+
+//Calculations hier
+
+
 function upd(){
     totalepc = amount1*1+amount2*5
     epc = 1+totalepc
