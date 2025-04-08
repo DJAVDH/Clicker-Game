@@ -7,18 +7,27 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="/fotos/banaan.png">
     <title>Food clicker</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oldenburg&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <!--Main UI-->
     <img class="Achtergrond" src="fotos/background 1.jpeg">
-    <div id="Topbar"></div>
+    <div id="Topbar">
+            <!--Displays voor info-->
+        <p id="TierDisp">Tier: <span id="Tier">Zwerver</span></p>
+        <p id="FoodDisp">Eten: <span id="Food">Prullenbak</span></p>
+        <p id="Multiplier">1x boost</p>
+    </div>
     <div id="Sidebar">
-        <div id="InnerSidebar">
+        <div id="InnerSidebar"> <!--Innersidebar waar upgrades en euro per click in zit-->
             <p id="Upgrades">Upgrades</p>
             <p id="EpcDisp"> <span id="Epc">1€</span>/ Click</p>
-
+            <!--Container van 1 upgrade-->
             <div class="UpgradeContainer">
                 <p class="OneClick">+1€/Click</p>
             <button class="Upgrade" onclick="buyupgrade1()">
@@ -57,22 +66,22 @@
 
         </div>
     </div>
+    <p id="MoneyDisp">Euros: <span id="Money">0</span></p> <!--Geld Display-->
     <div id="Bottombar">
-        <button id="openPopup">🪙</button>
+
     </div>
 
 
-    <p id="TierDisp">Tier: <span id="Tier">Zwerver</span></p>
-    <p id="FoodDisp">Eten: <span id="Food">Prullenbak</span></p>
-    <p id="Multiplier">1x boost</p>
-    <p id="MoneyDisp">Euros: <span id="Money">0</span></p>
+    <!--MAIN CLICK KNOP-->
     <button class="ClickButton" onclick="clickfood()"><img class="FoodClick" src="fotos/afvalcontainer-removebg-preview.png"></button>
-
+    <!--Hamburgermenu om FoodMenu Te openen-->
     <button id="HamburgerMenu" onclick="openmenu()"><img id="Hamburger" src="fotos/hamburgermenu.png"></button>
+
+    <!--De Food Upgrade Menu-->
     <div id="FoodMenu" class="Menu">
         <div id="InnerFoodMenu">
 
-            <div id="CirkelContainer">
+            <div id="CirkelContainer"> <!--Alle cirkels in deze container-->
                 <button id="c1"><div class="cirkel">Zwerver</div></button>
                 <button id="c2"><div class="cirkel">Arm</div></button>
                 <button id="c3"><div class="cirkel">Normaal</div></button>
@@ -80,7 +89,7 @@
                 <button id="c5"><div class="cirkel">Legend</div></button>
             </div>
 
-            <div id="FoodUpgrades">
+            <div id="FoodUpgrades"> <!--Food Upgrade knoppen-->
             <button class="FoodUpgradeButton" id="Food1">
                 <img>
                 <div class="FoodUpgrade" id="FoodUpgrade1"></div>
@@ -111,38 +120,7 @@
     </div>
 
 
-
-
-
-
-
-
-    <div id="popup" class="popup hidden">
-        <div class="popup-content">
-          <h2>Coinflip</h2>
-          <span id="closePopup" class="close">&times;</span>
-   
-          <div class="coin-wrapper">
-            <div id="coin" class="coin">
-              <div class="face front">Win</div>
-              <div class="face back">Loose</div>
-            </div>
-          </div>
-   
-          <div class="controls">
-            <button class="adjust" data-change="-1000">1k</button>
-            <button class="adjust" data-change="-5000">5k</button>
-            <div class="sign">-</div>
-   
-            <div id="bidAmount">0</div>
-   
-            <div class="sign">+</div>
-            <button class="adjust" data-change="5000">5k</button>
-            <button class="adjust" data-change="1000">1k</button>
-          </div>
-        </div>
-      </div>
-
+<!-- SCRIPTS -->
     <script src="scripts/config.js" defer></script>
     <script src="scripts/script.js" defer></script>
     <script src="scripts/buttons.js" defer></script>
