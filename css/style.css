@@ -347,17 +347,18 @@ border: 0;
 
 
 /* coinflip machinsme */
-button {
-    cursor: pointer;
-    font-size: 3.5vw;
-    background-color:#4C2E05;
-  }
+
+
  
   #openPopup {
  
     border: none;
     right: 0;
     position: absolute;
+
+    cursor: pointer;
+    font-size: 3.5vw;
+    background-color:#4C2E05;
   }
  
   .popup {
@@ -435,10 +436,15 @@ button {
   }
  
   .adjust {
-    background-color: #ccc;
+    background-color: #ffffff;
     border: none;
     width: 60px;
     margin: 12px;
+    cursor: pointer;
+    font-size: 3.5vw;
+
+
+
   }
  
   .sign {
