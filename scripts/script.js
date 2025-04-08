@@ -19,7 +19,7 @@ function startautoclick() {
             money += autoclickpower; // Add AutoEpcValue to score
             upd(); // Update UI or game state
         }
-    }, Math.round(autoclickspeed * 1000)) // Runs every AutoEpcSpeed seconds
+    }, Math.round((autoclickspeed-(amount4/10)) * 1000)) // Runs every AutoEpcSpeed seconds
 }
 
 

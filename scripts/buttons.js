@@ -77,11 +77,12 @@ playupgradesound.currentTime = 0.4;
 playupgradesound.play()
 
 amount3++
+upd()
 money -= prijs3
 prijs3 = Math.round(prijs3*1.1+35)
 
 if (autoclickpower > 0) {
-    startautoclick(); // Start automatic scoring if not already running
+    startautoclick(); // als autoclickpower hoger dan 0 is dan start de autoclick syteem
 }
 
 upd()
@@ -89,5 +90,36 @@ upd()
     document.getElementById("Amount3").textContent = amount3
     document.getElementById("Price3").textContent = displayedprice3+("€")
 }
+
+
+
+function buyupgrade4(){ // +15/sec
+    if (money<prijs4){
+        return;
+    }
+    
+    const playupgradesound = new Audio(upgradegeluid)
+    playupgradesound.playbackRate = 3;
+    playupgradesound.currentTime = 0.4;
+    playupgradesound.play()
+    
+    amount4++
+    upd()
+    money -= prijs4
+    prijs4 = Math.round(prijs4*1.25+200)
+    
+    if (autoclickpower > 0) {
+        startautoclick(); // Start automatic scoring if not already running
+    }
+
+    if (amount4 == 9){
+        document.getElementById("Upgrade4").remove()
+    }
+    
+    upd()
+        let displayedprice4 = formatMoney(prijs4)
+        document.getElementById("Amount4").textContent = amount4
+        document.getElementById("Price4").textContent = displayedprice4+("€")
+    }
 
 
