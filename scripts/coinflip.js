@@ -5,8 +5,7 @@ const coin = document.getElementById('coin');
 const bidDisplay = document.getElementById('bidAmount');
 let bid = 0;
 let rotation = 0;
- 
-openBtn.addEventListener('click', () => popup.classList.remove('hidden'));
+openBtn.addEventListener('click', () =>popup.classList.remove('hidden'));
 closeBtn.addEventListener('click', () => popup.classList.add('hidden'));
  
 document.querySelectorAll('.adjust').forEach(button => {

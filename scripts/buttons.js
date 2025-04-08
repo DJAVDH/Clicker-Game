@@ -4,14 +4,14 @@
 function clickfood(){  //Main clicker
     formatMoney()
 
-    const playEetsound = new Audio(eetgeluid)
+    const playEetsound = new Audio(eetgeluid)   //Speel geluid f
     playEetsound.playbackRate = Math.random() * (5-2) + 2;
-    playEetsound.volume = 0.5;
+    playEetsound.volume = 1;
     playEetsound.currentTime = 0.2;
     playEetsound.play()
 
-    money=money+epc
-    upd("money")
+    money=money+epc //geld erbij
+    upd("money") //update de ui
 }
 
 function openmenu(){ //Open de food menu
@@ -26,8 +26,8 @@ function openmenu(){ //Open de food menu
 
 };
 
-function buyupgrade1(){ //Upgrade 1 kopen
-    if (money<prijs1){
+function buyupgrade1(){ //Upgrade 1 kopen +1
+    if (money<prijs1){ //als geld lager is dan prijs dan stop function
         return;
     }
 
@@ -37,16 +37,16 @@ function buyupgrade1(){ //Upgrade 1 kopen
     playupgradesound.play()
 
 
-    amount1++
-    money -= prijs1
-    prijs1 = Math.round(prijs1*1.05+15)
-    upd()
-    let displayedprice1 = formatMoney(prijs1)
-    document.getElementById("Amount1").textContent = amount1
-    document.getElementById("Price1").textContent = displayedprice1+("€")
+    amount1++  //+1 voor amount1 (+1 epc/europerclick)
+    money -= prijs1  //Geld - prijs = gewoon kopen voor prijs
+    prijs1 = Math.round(prijs1*1.03+10) //prijs increase
+    upd() //update ui
+    let displayedprice1 = formatMoney(prijs1) //nieuwe prijs format
+    document.getElementById("Amount1").textContent = amount1 //Hoeveel je hebt gekocht in de ui
+    document.getElementById("Price1").textContent = displayedprice1+("€") //Nieuwe prijs update
 }
 
-function buyupgrade2(){ //Upgrade 2 kopen
+function buyupgrade2(){ //Upgrade 2 kopen +10
     if (money<prijs2){
         return;
     }
@@ -58,11 +58,36 @@ function buyupgrade2(){ //Upgrade 2 kopen
 
     amount2++
     money -= prijs2
-    prijs2 = Math.round(prijs2*1.2+50)
+    prijs2 = Math.round(prijs2*1.1+50)
     upd()
     let displayedprice2 = formatMoney(prijs2)
     document.getElementById("Amount2").textContent = amount2
     document.getElementById("Price2").textContent = displayedprice2+("€")
+}
+
+
+function buyupgrade3(){ // +15/sec
+if (money<prijs3){
+    return;
+}
+
+const playupgradesound = new Audio(upgradegeluid)
+playupgradesound.playbackRate = 3;
+playupgradesound.currentTime = 0.4;
+playupgradesound.play()
+
+amount3++
+money -= prijs3
+prijs3 = Math.round(prijs3*1.1+35)
+
+if (autoclickpower > 0) {
+    startautoclick(); // Start automatic scoring if not already running
+}
+
+upd()
+    let displayedprice3 = formatMoney(prijs3)
+    document.getElementById("Amount3").textContent = amount3
+    document.getElementById("Price3").textContent = displayedprice3+("€")
 }
 
 

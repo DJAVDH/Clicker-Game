@@ -15,11 +15,15 @@ let amount4 = 0
 //Hoveel Upgrades je hebt
 let foodmulti = 1
 //FoodMultis
-const eetgeluid = ("sfx/eet.mp3")
-const slidegeluid = ("sfx/slide.mp3")
-const upgradegeluid = ("sfx/upgrade.mp3")
+let eetgeluid = ("sfx/eet.mp3")
+let slidegeluid = ("sfx/slide.mp3")
+let upgradegeluid = ("sfx/upgrade.mp3")
+let popgeluid = ("sfx/pop.mp3")
 //sounds
-
+let autoclickpower = 0
+let autoclickspeed = 1
+let autoEpcInterval = null;
+//autoclicker settings
 function formatMoney(amount) { //Trillion billion million thousand
     if (amount >= 1e12) {
         return (amount / 1e2).toFixed(1) + 'T';
