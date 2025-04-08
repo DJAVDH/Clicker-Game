@@ -57,7 +57,13 @@
 
         </div>
     </div>
-    <div id="Bottombar"></div>
+    <div id="Bottombar">
+        <button id="openPopup">🪙</button>
+
+
+    </div>
+
+
     <p id="TierDisp">Tier: <span id="Tier">Zwerver</span></p>
     <p id="FoodDisp">Eten: <span id="Food">Prullenbak</span></p>
     <p id="Multiplier">1x boost</p>
@@ -105,8 +111,43 @@
 
         </div>
     </div>
+
+
+
+
+
+
+
+
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+          <h2>Coinflip</h2>
+          <span id="closePopup" class="close">&times;</span>
+   
+          <div class="coin-wrapper">
+            <div id="coin" class="coin">
+              <div class="face front">Win</div>
+              <div class="face back">Loose</div>
+            </div>
+          </div>
+   
+          <div class="controls">
+            <button class="adjust" data-change="-1000">1k</button>
+            <button class="adjust" data-change="-5000">5k</button>
+            <div class="sign">-</div>
+   
+            <div id="bidAmount">0</div>
+   
+            <div class="sign">+</div>
+            <button class="adjust" data-change="5000">5k</button>
+            <button class="adjust" data-change="1000">1k</button>
+          </div>
+        </div>
+      </div>
+
     <script src="scripts/config.js" defer></script>
     <script src="scripts/script.js" defer></script>
     <script src="scripts/buttons.js" defer></script>
+    <script src="scripts/coinflip.js" defer></script>
 </body>
 </html>
