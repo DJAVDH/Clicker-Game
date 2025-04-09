@@ -72,7 +72,7 @@
 
 
     <!--MAIN CLICK KNOP-->
-    <button class="ClickButton" onclick="clickfood()"><img class="FoodClick" src="fotos/afvalcontainer-removebg-preview.png"></button>
+    <button class="ClickButton" onclick="clickfood()"><img class="FoodClick" id="clickimage" src="fotos/afvalcontainer-removebg-preview.png"></button>
     <!--Hamburgermenu om FoodMenu Te openen-->
     <button id="HamburgerMenu" onclick="openmenu()"><img id="Hamburger" src="fotos/hamburgermenu.png"></button>
 
@@ -81,57 +81,51 @@
         <div id="InnerFoodMenu">
 
             <div id="CirkelContainer"> <!--Alle cirkels in deze container-->
-                <button id="c1"><div class="cirkel">Zwerver</div></button>
-                <button id="c2"><div class="cirkel">Arm</div></button>
-                <button id="c3"><div class="cirkel">Normaal</div></button>
-                <button id="c4"><div class="cirkel">Rijk</div></button>
-                <button id="c5"><div class="cirkel">Legend</div></button>
+                <button id="c1" onclick="switchmenu('Zwerver')"><div class="cirkel">Zwerver</div></button>
+                <button id="c2" onclick="switchmenu('Arm')"><div class="cirkel">Arm</div></button>
+                <button id="c3" onclick="switchmenu('Normaal')"><div class="cirkel">Normaal</div></button>
+                <button id="c4" onclick="switchmenu('Rijk')"><div class="cirkel">Rijk</div></button>
+                <button id="c5" onclick="switchmenu('Legend')"><div class="cirkel">Legend</div></button>
             </div>
 
             <div id="FoodUpgrades"> <!--Food Upgrade knoppen-->
-            <button class="FoodUpgradeButton" id="Food1">
-                    <div class="FoodUpgrade" id="FoodUpgrade1">
-                        <img src="fotos/afvalcontainer-removebg-preview.png">
-                        <p id="NaamFood1">Vuilnisbak:</p>
-                        <span id="PrijsFood1">Equipped</span>
-                        <span id="MultiFood1">1X</span>
+            <button class="FoodUpgradeButton" onclick="buyFoodUpgrade(0)" id="Food0">
+                    <div class="FoodUpgrade" id="FoodUpgrade0">
+                        <img id="Foto0" src="fotos/afvalcontainer-removebg-preview.png">
+                        <p id="NaamFood0">Vuilnisbak:</p>
+                        <span id="PrijsFood0">Equipped</span>
+                        <span id="MultiFood0">1X</span>
 
                     </div>
             </button>
 
-            <button class="FoodUpgradeButton" id="Food2">
+            <button class="FoodUpgradeButton" onclick="buyFoodUpgrade(1)" id="Food1">
+                <div class="FoodUpgrade" id="FoodUpgrade1">
+                        <img id="Foto1" src="fotos/streetgum.png">
+                        <p id="NaamFood1">Kauwgom:</p>
+                        <span id="PrijsFood1">1k€</span>
+                        <span id="MultiFood1">2X</span>
+                    </div>
+            </button>
+
+            <button class="FoodUpgradeButton" onclick="buyFoodUpgrade(2)" id="Food2">
                 <div class="FoodUpgrade" id="FoodUpgrade2">
-                        <img src="fotos/streetgum.png">
-                        <p id="NaamFood2">Kauwgom:</p>
-                        <span id="PrijsFood2">1k€</span>
-                        <span id="MultiFood2">2X</span>
-                    </div>
-            </button>
-
-            <button class="FoodUpgradeButton" id="Food3">
-                <div class="FoodUpgrade" id="FoodUpgrade3">
-                    <img src="fotos/banana-peel.png">
-                    <p id="NaamFood3">Bananen schil:</p>
-                    <span id="PrijsFood3">3.5k€</span>
-                    <span id="MultiFood3">3X</span>
+                    <img id="Foto2" src="fotos/banana-peel.png">
+                    <p id="NaamFood2">Bananen schil:</p>
+                    <span id="PrijsFood2">3.5k€</span>
+                    <span id="MultiFood2">3X</span>
                 </div>
             </button>
 
-            <button class="FoodUpgradeButton" id="Food4">
-                <div class="FoodIpgrade" id="FoodUpgrade4">
-                    <img src="fotos/rat.png">
-                    <p id="NaamFood4">Rat:</p>
-                    <span id="PrijsFood4">10k€</span>
-                    <span id="MultiFood4">5x</span>
+            <button class="FoodUpgradeButton" onclick="buyFoodUpgrade(3)" id="Food3">
+                <div class="FoodIpgrade" id="FoodUpgrade3">
+                    <img id="Foto3" src="fotos/rat.png">
+                    <p id="NaamFood3">Rat:</p>
+                    <span id="PrijsFood3">10k€</span>
+                    <span id="MultiFood3">5x</span>
                 </div>
             </button>
 
-            <button class="FoodUpgradeButton" id="Food5" hidden>
-                <div class="FoodUpgrade" id="FoodUpgrade5">
-                    <img src="fotos/afvalcontainer-removebg-preview.png">
-                    <p id="NaamFood5">Vuilnisbak:</p>
-                    <span id="PrijsFood5">€</span>
-                    <span id="MultiFood5">1x</span>
                 </div>
             </button>
 
@@ -145,6 +139,6 @@
     <script src="scripts/config.js" defer></script>
     <script src="scripts/script.js" defer></script>
     <script src="scripts/buttons.js" defer></script>
-    <script src="scripts/coinflip.js" defer></script>
+    <!-- <script src="scripts/coinflip.js" defer></script> -->
 </body>
 </html>
