@@ -1,6 +1,6 @@
 
 //Main variables en getallen hier
-
+let epc = 1 //Euro per click
 let money = 0
 //Je geld
 let prijs1 = 50
@@ -24,42 +24,53 @@ let autoclickpower = 0
 let autoclickspeed = 1
 let autoEpcInterval = null;
 //autoclicker settings
-let typefoods ={
+let currenttab = 0
+//Tabs
+
+let typefoods = {
     Zwerver: [
-        { name: "Vuilnisbak", price: 0, tier: "Zwerver", multiplier: 1, foto: "fotos/afvalcontainer-removebg-preview.png"},
-        { name: "Stoep Kauwgom", price: 1000, tier: "Zwerver", multiplier: 2, foto: "fotos/streetgun.png" },
-        { name: "Bananen Schil", price: 3500, tier: "Zwerver", multiplier: 3, foto: "fotos/banana-peel.png" },
-        { name: "Rat", price: 10000, tier: "Zwerver", multiplier: 5, foto:"fotos/rat.png" },
-      ],
-      Arm: [
-        { name: "Bruine Banaan", price: 0, tier: "Zwerver", multiplier: 1, foto:"fotos/brown-banana.png" },
-        { name: "Rijst", price: 1000, tier: "Zwerver", multiplier: 2, foto:"fotos/rijst.png" },
-        { name: "Aardappel", price: 3500, tier: "Zwerver", multiplier: 3, foto:"fotos/aardappelnew.png" },
-        { name: "Brood", price: 10000, tier: "Zwerver", multiplier: 5, foto:"fotos/bread.png" },
-      ],
-      Normaal: [
-        { name: "Banaan", price: 0, tier: "Zwerver", multiplier: 1, foto:"fotos/banaan.png" },
-        { name: "Burger", price: 1000, tier: "Zwerver", multiplier: 2, foto:"fotos/burger.png" },
-        { name: "Spaghetti", price: 3500, tier: "Zwerver", multiplier: 3, foto:"fotos/spagghetti.png" },
-      ],
-      Rijk: [
-        { name: "Sushi", price: 0, tier: "Zwerver", multiplier: 1, foto:"fotos/sushi.png" },
-        { name: "Bananensplit", price: 1000, tier: "Zwerver", multiplier: 2, foto:"fotos/bananensplit.png" },
-        { name: "Kreeft", price: 3500, tier: "Zwerver", multiplier: 3, foto:"fotos/lobster.png" },
-        { name: "Caviar", price: 10000, tier: "Zwerver", multiplier: 5, foto:"fotos/caviar.png" },
-        { name: "Wagyu Steak", price: 10000, tier: "Zwerver", multiplier: 5, foto:"fotos/wagyu-steak.png"},
-      ],
-      Legend: [
-        { name: "Gouden pizza", price: 0, tier: "Zwerver", multiplier: 1, foto:"fotos/goldenpizza.png" },
-        { name: "Dodo", price: 1000, tier: "Zwerver", multiplier: 2, foto:"fotos/cartoon-dodo.png" },
-        { name: "Uranium", price: 3500, tier: "Zwerver", multiplier: 3, foto:"fotos/uranium.png" },
-        { name: "Supreme Banaan", price: 10000, tier: "Zwerver", multiplier: 5, foto:"fotos/supreme-vanana.png" },
-      ],
-}
-//FOODS/TIERS
+      { name: "Vuilnisbak", price: 0, tier: "Zwerver", multiplier: 1, foto: "fotos/afvalcontainer-removebg-preview.png", equipped: true, owned: false},
+      { name: "Stoep Kauwgom", price: 1000, tier: "Zwerver", multiplier: 2, foto: "fotos/streetgum.png", equipped: false, owned: false },
+      { name: "Bananen Schil", price: 3500, tier: "Zwerver", multiplier: 3, foto: "fotos/banana-peel.png", equipped: false, owned: false },
+      { name: "Rat", price: 10000, tier: "Zwerver", multiplier: 5, foto:"fotos/rat.png", equipped: false, owned: false },
+    ],
+    Arm: [
+      { name: "Bruine Banaan", price: 50000, tier: "Arm", multiplier: 10, foto:"fotos/brown-banana.png", equipped: false, owned: false },
+      { name: "Rijst", price: 150000, tier: "Arm", multiplier: 15, foto:"fotos/rijst.png", equipped: false, owned: false },
+      { name: "Aardappel", price: 250000, tier: "Arm", multiplier: 20, foto:"fotos/aardappelnew.png", equipped: false, owned: false },
+      { name: "Brood", price: 500000, tier: "Arm", multiplier: 25, foto:"fotos/bread.png", equipped: false, owned: false },
+    ],
+    Normaal: [
+      { name: "Banaan", price: 1000000, tier: "Normaal", multiplier: 50, foto:"fotos/banaan.png", equipped: false, owned: false },
+      { name: "Burger", price: 2000000, tier: "Normaal", multiplier: 100, foto:"fotos/burger.png", equipped: false, owned: false },
+      { name: "Spaghetti", price: 3500000, tier: "Normaal", multiplier: 150, foto:"fotos/spagghetti.png", equipped: false, owned: false },
+      { name: "Sushi", price: 10000000, tier: "Normaal", multiplier: 250, foto:"fotos/sushi.png", equipped: false, owned: false },
+    ],
+    Rijk: [
+      { name: "Bananensplit", price: 25000000, tier: "Rijk", multiplier: 500, foto:"fotos/bananensplit.png", equipped: false, owned: false },
+      { name: "Kreeft", price: 50000000, tier: "Rijk", multiplier: 750, foto:"fotos/lobster.png", equipped: false, owned: false },
+      { name: "Caviar", price: 100000000, tier: "Rijk", multiplier: 1000, foto:"fotos/caviar.png", equipped: false, owned: false },
+      { name: "Wagyu Steak", price: 500000000, tier: "Rijk", multiplier: 1500, foto:"fotos/wagyu-steak.png", equipped: false, owned: false },
+    ],
+    Legend: [
+      { name: "Gouden pizza", price: 1000000000, tier: "Legend", multiplier: 2500, foto:"fotos/goldenpizza.png", equipped: false, owned: false },
+      { name: "Dodo", price: 2500000000, tier: "Legend", multiplier: 5000, foto:"fotos/cartoon-dodo.png", equipped: false, owned: false },
+      { name: "Uranium", price: 5000000000, tier: "Legend", multiplier: 10000, foto:"fotos/uranium.png", equipped: false, owned: false },
+      { name: "Supreme Banaan", price: 1000000000000, tier: "Legend", multiplier: 1000000, foto:"fotos/supreme-banana.png", equipped: false, owned: false },
+    ],
+  }
+//FOODS SETTINGS
 function formatMoney(amount) { //Formatting voor getallen
-    if (amount >= 1e12) {
-        return (amount / 1e2).toFixed(1) + 'T'; //triljoen
+    if (amount >= 1e24) {
+        return (amount / 1e24).toFixed(1) + 'SP'; //Septillion
+    } else if (amount >= 1e24) {
+        return (amount / 1e21).toFixed(1) + 'SX'; //Sextillion
+    } else if (amount >= 1e21) {
+        return (amount / 1e18).toFixed(1) + 'QN'; //Quantillion
+    } else if (amount >= 1e18) {
+        return (amount / 1e15).toFixed(1) + 'QD'; //Qd
+    } else if (amount >= 1e15) {
+        return (amount / 1e12).toFixed(1) + 'T'; //triljoen
     } else if (amount >= 1e9) {
         return (amount / 1e9).toFixed(1) + 'B'; //biljoen
     } else if (amount >= 1e6) {
@@ -70,8 +81,6 @@ function formatMoney(amount) { //Formatting voor getallen
         return amount;
     }
 }
-
-let epc = 1 //Euro per click
 
 
 let displayedmoney = formatMoney(money);

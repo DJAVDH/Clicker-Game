@@ -11,7 +11,7 @@ function clickfood(){  //Main clicker
     playEetsound.play()
 
     money=money+epc //geld erbij
-    upd("money") //update de ui
+    upd() //update de ui
 }
 
 function openmenu(){ //Open de food menu
@@ -121,5 +121,80 @@ function buyupgrade4(){ // +15/sec
         document.getElementById("Amount4").textContent = amount4
         document.getElementById("Price4").textContent = displayedprice4+("€")
     }
+
+
+    function switchmenu(tier)
+    {
+        currenttab = tier
+        const items = typefoods[tier];
+        for (let i = 0; i < 4; i++)
+        {
+            document.getElementById("Foto"+i).src = items[i].foto
+            document.getElementById("NaamFood"+i).textContent = items[i].name +":"
+            document.getElementById("PrijsFood"+i).textContent = items[i].price + "€"
+            document.getElementById("MultiFood"+i).textContent = items[i].multiplier + "X"
+        }
+    }
+
+    function buyFoodUpgrade(button){
+        const itemMultiplier = typefoods[currenttab][button].multiplier;
+        const itemPrice = typefoods[currenttab][button].price;
+        const itemFoto = typefoods[currenttab][button].foto;
+
+        if (money <= itemPrice){
+            return;
+        }
+
+        money = money-itemPrice
+        foodmulti = itemMultiplier
+        document.getElementById("clickimage").src = itemFoto
+        upd()
+    }
+
+    switchmenu('Zwerver')
+
+//     function veranderfoodmenu(tier) {
+//         const foods = typefoods[tier];
+    
+//         for (let i = 0; i < 5; i++) {
+//             const foodButton = document.getElementById(`Food${i + 1}`);
+//             const foodUpgrade = document.getElementById(`FoodUpgrade${i + 1}`);
+//             const naam = document.getElementById(`NaamFood${i + 1}`);
+//             const prijs = document.getElementById(`PrijsFood${i + 1}`);
+//             const multi = document.getElementById(`MultiFood${i + 1}`);
+//             const img = foodUpgrade.querySelector("img");
+            
+    
+//             if (foods[i]) {
+//                 // Show the button and update its data if the food exists for this index.
+//                 foodButton.hidden = false;
+//                 foodButton.onclick = () => handleFoodClick(tier, i);
+//         foodButton.onclick = () => handleFoodClick(tier, i);
+
+//                 naam.textContent = `${foods[i].name}:`;
+//                 prijs.textContent = foods[i].equipped 
+//                                       ? 'Equipped' 
+//                                       : formatMoney(foods[i].price) + '€';
+//                  multi.textContent = `${formatMoney(foods[i].multiplier)}x`;
+    
+//                 if (foods[i].foto) {
+//                     img.src = foods[i].foto;
+//                 }
+//             } else {
+//                 // Verstop knop wanneer het er niet is
+//                 foodButton.hidden = true;
+//             }
+//         }
+//     }
+
+
+
+
+// //Alle click listeners zodat het naar de juiste tier gaat
+// document.getElementById("c1").addEventListener("click", () => veranderfoodmenu("Zwerver"));
+// document.getElementById("c2").addEventListener("click", () => veranderfoodmenu("Arm"));
+// document.getElementById("c3").addEventListener("click", () => veranderfoodmenu("Normaal"));
+// document.getElementById("c4").addEventListener("click", () => veranderfoodmenu("Rijk"));
+// document.getElementById("c5").addEventListener("click", () => veranderfoodmenu("Legend"));
 
 

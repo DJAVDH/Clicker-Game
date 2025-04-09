@@ -5,7 +5,7 @@ function upd(){ //Update UI, Getallen En Formatting
     totalepc = amount1*1+amount2*10 //Telt op Upgrades naar de Euro per click
     totalautoclickpower = amount3*15 // Telt op upgrades naar de autoclick value
     autoclickpower = totalautoclickpower //Vertelt de autoclick value
-    epc = 1+totalepc //Vertelt de Click value
+    epc = (1+totalepc)*foodmulti //Vertelt de Click value
     displayedmoney = formatMoney(money); //Displayed geld
     document.getElementById("Money").textContent = displayedmoney+"€" //Update de geld display
     document.getElementById("Epc").textContent = epc+"€" //Update de epc display
