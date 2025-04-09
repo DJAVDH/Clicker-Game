@@ -67,7 +67,7 @@
     </div>
     <p id="MoneyDisp">Euros: <span id="Money">0</span></p> <!--Geld Display-->
     <div id="Bottombar">
-
+        <button id="coinButton">🪙</button>
     </div>
 
 
@@ -141,7 +141,44 @@
     </div>
 
 
+
+<!--coinflip-->
+
+
+
+<div id="coinflipPopup" class="popup hidden">
+  <span class="close-btn" id="closePopup">×</span>
+  <div class="popup-content">
+    <h2>Coinflip</h2>
+
+    <div id="coin" class="coin">
+      <div class="face front">Win</div>
+      <div class="face back">Loose</div>
+    </div>
+
+    <div class="controls">
+      <div class="side-controls">
+        <div class="sign">−</div>
+        <button class="adjustBet" data-value="-1000">1k</button>
+        <button class="adjustBet" data-value="-500">500</button>
+      </div>
+
+      <div class="center-controls">
+        <div id="betAmount" class="bet-display">0</div>
+      </div>
+
+      <div class="side-controls">
+        <div class="sign">+</div>
+        <button class="adjustBet" data-value="500">500</button>
+        <button class="adjustBet" data-value="1000">1k</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- SCRIPTS -->
+
     <script src="scripts/config.js" defer></script>
     <script src="scripts/script.js" defer></script>
     <script src="scripts/buttons.js" defer></script>

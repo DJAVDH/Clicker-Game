@@ -160,6 +160,9 @@ p{
     height: 10vh;
     background-color: #4C2E05;
     position: absolute;
+    right: 0;
+    font: 50;
+    
 }
 
 /*Displays*/
@@ -366,3 +369,158 @@ max-width:4vw ;
 .FoodUpgradeButton:hover > div{
  background-color: rgb(136, 136, 136);
 }
+
+
+
+
+
+
+
+
+
+
+
+/* coinfl;ip */
+
+  
+  button.adjustbet {
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f8e9a1;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+    border: 3px solid #222;
+    width: 300px;
+  }
+  
+  .popup-content {
+    position: relative;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #222;
+    width: 26px;
+    height: 26px;
+    color: #ff0000;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .coin {
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+    perspective: 1000px;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  
+  .face {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  
+  .front {
+    transform: rotateY(0deg);
+  }
+  
+  .back {
+    transform: rotateY(180deg);
+  }
+  
+  .coin.spin {
+    animation: flip 2s ease-in-out;
+  }
+  
+  @keyframes flip {
+    0%   { transform: rotateY(0deg); }
+    25%  { transform: rotateY(360deg); }
+    50%  { transform: rotateY(720deg); }
+    75%  { transform: rotateY(1080deg); }
+    100% { transform: rotateY(1440deg); }
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    align-items: flex-start;
+  }
+  
+  .side-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+
+
+  }
+  
+  .sign {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .center-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bet-display {
+    font-size: 20px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #999;
+    min-width: 80px;
+    text-align: center;
+  }
+
+  #coinButton {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    font-size: 3.5vw;; 
+    background-color:#4C2E05;
+  }
+  
+  /* einde coinflip */
