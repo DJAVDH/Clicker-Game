@@ -1,38 +1,187 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clicker Game</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="/fotos/banaan.png">
+    <title>Food clicker</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oldenburg&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div id="topbar"></div>
-    <div id="rightbar"></div>
-    <div id="bottombar"></div>
-
-    <h1>Clicker Game</h1>
-
-    <!--INFO-->
-    <p id="scoreboard">Score: <span id="score">0</span></p>
-    <p id="epcdisplay">epc: <span id="epc">1</span> <span id="multi2">1x</span> <span id="total">(1)</span> </p>
-    <p id="AutoEpcDisplay">Auto: <span id="autoEpcValue">0</span> <span id="autospeed">/1s </span> <span id="multi">1x</span> <span id="totalAuto"> (0)</span></p>
-    <button id="clickButton">Klik hier!</button> <!--CLICK KNOP-->
-<!--Upgrades Rechts-->
-    <div id="baseupgrades">
-    <button id="upgradeButton">upgrade: <span id="upgrade1">15</span></button>
-    <button id="autoEpc">Auto epc: <span id="upgradeAuto">100</span></button>
-    <button id="autoEpcSpeed">Auto epc Speed: <span id="upgradeAutoSpeed">1000</span></button>
+    <!--Main UI-->
+    <img class="Achtergrond" src="fotos/background 1.jpeg">
+    <div id="Topbar">
+            <!--Displays voor info-->
+        <p id="TierDisp">Tier: <span id="Tier">Zwerver</span></p>
+        <p id="FoodDisp">Eten: <span id="Food">Prullenbak</span></p>
     </div>
-<!--Upgrades Links-->
-    <div id="multiupgrades">
-    <button id="doubleEpc">2x upgrade: <span id="upgrade2">100</span></button>
-    <button id="tripleEpc">3x upgrade:<span id="upgrade3">1000</span></button>
-    <button id="quadrupleEpc">4x upgrade:<span id="upgrade4">10000</span></button>
+    <div id="Sidebar">
+        <div id="InnerSidebar"> <!--Innersidebar waar upgrades en euro per click in zit-->
+            <p id="Upgrades">Upgrades</p>
+            <p id="EpcDisp"> <span id="Epc">1€</span>/ Click</p>
+            <!--Container van 1 upgrade-->
+            <div class="UpgradeContainer">
+                <p class="OneClick">+1€/Click</p>
+            <button class="Upgrade" onclick="buyupgrade1()">
+                <img src="fotos/Pointing_hand_cursor_vector.svg.png" >
+                    <span class="Price" id="Price1">50€</span> 
+                    <span class="Amount"id="Amount1">0</span> </p>         
+            </button>
+            </div>
+
+            <div class="UpgradeContainer">
+                <p class="OneClick">+10€/Click</p>
+            <button class="Upgrade" onclick="buyupgrade2()">
+                <img src="fotos/Pointing_hand_cursor_vector.svg.png" >
+                    <span class="Price" id="Price2">500€</span> 
+                    <span class="Amount"id="Amount2">0</span> </p>         
+            </button>
+            </div>
+
+            <div class="UpgradeContainer">
+                <p class="OneClick">+15€/Sec</p>
+            <button class="Upgrade" onclick="buyupgrade3()">
+                <img src="fotos/tandwiel.png" >
+                    <span class="Price" id="Price3">250€</span> 
+                    <span class="Amount"id="Amount3">0</span> </p>         
+            </button>
+            </div>
+
+            <div class="UpgradeContainer" id="Upgrade4">
+                <p class="OneClick" id="Upgrade4">-0.1Sec Autoclick</p>
+            <button class="Upgrade" onclick="buyupgrade4()">
+                <img src="fotos/tandwiel.png" >
+                    <span class="Price" id="Price4">1000€</span> 
+                    <span class="Amount" id="Amount4">0</span> </p>         
+            </button>
+            </div>
+
+        </div>
+    </div>
+    <p id="MoneyDisp">Euros: <span id="Money">0</span></p> <!--Geld Display-->
+    <div id="Bottombar">
+        <button id="coinButton">🪙</button>
     </div>
 
-    <button id="flip" onclick="coinflip()"><img id="coin" src="fotos/munt.png"></button>
-    <script src="variables.js" defer></script>
-    <script src="script.js" defer></script>
+
+    <!--MAIN CLICK KNOP-->
+    <button class="ClickButton" onclick="clickfood()"><img class="FoodClick" src="fotos/afvalcontainer-removebg-preview.png"></button>
+    <!--Hamburgermenu om FoodMenu Te openen-->
+    <button id="HamburgerMenu" onclick="openmenu()"><img id="Hamburger" src="fotos/hamburgermenu.png"></button>
+
+    <!--De Food Upgrade Menu-->
+    <div id="FoodMenu" class="Menu">
+        <div id="InnerFoodMenu">
+
+            <div id="CirkelContainer"> <!--Alle cirkels in deze container-->
+                <button id="c1"><div class="cirkel">Zwerver</div></button>
+                <button id="c2"><div class="cirkel">Arm</div></button>
+                <button id="c3"><div class="cirkel">Normaal</div></button>
+                <button id="c4"><div class="cirkel">Rijk</div></button>
+                <button id="c5"><div class="cirkel">Legend</div></button>
+            </div>
+
+            <div id="FoodUpgrades"> <!--Food Upgrade knoppen-->
+            <button class="FoodUpgradeButton" id="Food1">
+                    <div class="FoodUpgrade" id="FoodUpgrade1">
+                        <img src="fotos/afvalcontainer-removebg-preview.png">
+                        <p id="NaamFood1">Vuilnisbak:</p>
+                        <span id="PrijsFood1">Equipped</span>
+                        <span id="MultiFood1">1X</span>
+
+                    </div>
+            </button>
+
+            <button class="FoodUpgradeButton" id="Food2">
+                <div class="FoodUpgrade" id="FoodUpgrade2">
+                        <img src="fotos/streetgum.png">
+                        <p id="NaamFood2">Kauwgom:</p>
+                        <span id="PrijsFood2">1k€</span>
+                        <span id="MultiFood2">2X</span>
+                    </div>
+            </button>
+
+            <button class="FoodUpgradeButton" id="Food3">
+                <div class="FoodUpgrade" id="FoodUpgrade3">
+                    <img src="fotos/banana-peel.png">
+                    <p id="NaamFood3">Bananen schil:</p>
+                    <span id="PrijsFood3">3.5k€</span>
+                    <span id="MultiFood3">3X</span>
+                </div>
+            </button>
+
+            <button class="FoodUpgradeButton" id="Food4">
+                <div class="FoodIpgrade" id="FoodUpgrade4">
+                    <img src="fotos/rat.png">
+                    <p id="NaamFood4">Rat:</p>
+                    <span id="PrijsFood4">10k€</span>
+                    <span id="MultiFood4">5x</span>
+                </div>
+            </button>
+
+            <button class="FoodUpgradeButton" id="Food5" hidden>
+                <div class="FoodUpgrade" id="FoodUpgrade5">
+                    <img src="fotos/afvalcontainer-removebg-preview.png">
+                    <p id="NaamFood5">Vuilnisbak:</p>
+                    <span id="PrijsFood5">€</span>
+                    <span id="MultiFood5">1x</span>
+                </div>
+            </button>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+<!--coinflip-->
+
+
+
+<div id="coinflipPopup" class="popup hidden">
+  <span class="close-btn" id="closePopup">×</span>
+  <div class="popup-content">
+    <h2>Coinflip</h2>
+
+    <div id="coin" class="coin">
+      <div class="face front">Win</div>
+      <div class="face back">Loose</div>
+    </div>
+
+    <div class="controls">
+      <div class="side-controls">
+        <div class="sign">−</div>
+        <button class="adjustBet" data-value="-1000">1k</button>
+        <button class="adjustBet" data-value="-500">500</button>
+      </div>
+
+      <div class="center-controls">
+        <div id="betAmount" class="bet-display">0</div>
+      </div>
+
+      <div class="side-controls">
+        <div class="sign">+</div>
+        <button class="adjustBet" data-value="500">500</button>
+        <button class="adjustBet" data-value="1000">1k</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SCRIPTS -->
+
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/buttons.js" defer></script>
+    <script src="scripts/coinflip.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,526 @@
+/* reset alles */
+
+*{
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+
+/*font*/
+body{
+        font-family: "Oldenburg", serif;
+        font-weight: 400;
+        font-style: normal;
+        z-index: 1;
+  }
+
+p{
+    font-size: clamp(0px, 1vw + 1vh, 64px);
+}
+
+
+/*Main ui*/
+.Achtergrond{
+    z-index: -1;
+    position: absolute;
+    top: 10vh;
+    height: 0;
+    width: 70vw;
+    height: 80vh;
+}
+
+#Topbar{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10vw;
+    position: absolute;
+    top: 0;
+    height: 0;
+    width: 70vw;
+    height: 10vH;
+    background-color: #405C37;
+}
+
+#Topbar p{
+    position: relative;
+    left: 18%;
+    font-size: clamp(0px, 1.7vw + 1.7vh, 64px);
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#Sidebar{
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 30vw;
+    height: 100vh;
+    background-color: #4C2E05;
+}
+/*Alles in sidebar Upgrades, Info en geld*/
+#InnerSidebar{
+    width: 24vw;
+    height: 76vh;
+    background-color: #8D724D;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -47%);
+}
+
+
+#Upgrades{
+    font-size: clamp(0px, 2vw + 2vh, 64px);
+    color: white;
+    margin-left: 5vw;
+}
+
+.Upgrade{
+    transition: all 0.2 ease;
+    font-family: "Oldenburg", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 2vw;
+    margin-left: 2vw;
+    justify-content: space-between;
+    width: 20vw;
+    height: 8vh;
+    border: 0;
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Upgrade:hover {
+    background-color: #6f6f6f;
+}
+
+.Upgrade:hover > img {
+    background-color: #3d3d3d;
+}
+
+.Upgrade:active {
+    filter: brightness(80%);
+    transform: translateY(2px);
+}
+
+.Upgrade:active > img {
+    filter: brightness(80%);
+    transform: translateY(1px);
+}
+
+.UpgradeContainer{
+    position:relative ;
+    bottom: 1vh;
+    margin-top: -3vh;
+}
+
+
+.Amount{
+    position: relative;
+    font-size: 2rem;
+    font-size: clamp(0px, 2vw + 2vh, 64px);
+    margin-left: auto; 
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Price{
+    font-size: clamp(0px, 1vw + 1vh, 32px);  
+}
+.OneClick{
+    position: relative;
+    top: 4vh;
+    left: 2vw;
+}
+
+.Upgrade > img{
+    width: 6vw;
+    height: 8vh;
+    background-color: #A6A6A6;
+}
+
+#EpcDisp{
+    bottom: 10vh;
+    margin-left: 8vw;
+    color: white;
+    position: absolute; 
+}
+/*Bottom Bar voor alles onder Coinflip menu info settings hamburger bar voor slide menu*/
+#Bottombar{
+    bottom: 0;
+    left: 0;
+    width: 70vw;
+    height: 10vh;
+    background-color: #4C2E05;
+    position: absolute;
+    right: 0;
+    font: 50;
+    
+}
+
+/*Displays*/
+
+
+#Multiplier{
+    left: 38vw;
+    top: 2.5vh;
+    color: white;
+    position: absolute; 
+}
+
+
+#MoneyDisp{
+    left: 73vw;
+    top: 8vh;
+    font-size: clamp(0px, 1.5vw + 1.5vh, 64px);
+    color: white;
+    position: absolute; 
+}
+/*Main click button*/
+.ClickButton{
+    transition: all 0.1s;
+    background-color: transparent;
+    border: none;
+    width: 1vw;
+    height: 1vh;
+    position: absolute;
+    top: 20vh;
+    left: 20vw;
+    cursor: pointer;
+}
+
+.FoodClick{
+    width: 30vw;
+    height: 30vw;
+}
+
+.ClickButton:hover{
+    transform: translateY(-15px);
+    filter: brightness(70%);
+}
+
+.ClickButton:active{
+    transform: translateY(15px);
+    filter: brightness(50%);
+}
+/*Food upgrade menu*/
+#FoodMenu {
+    position: fixed;
+    top: 0;
+    left: -25vw; 
+    width: 25vw;
+    height: 100%;
+    background-color: #334A2C;
+    color: white;
+    transition: left 0.3s ease-in;
+  }
+  
+  #FoodMenu.open {
+    left: 0;
+  }
+  
+  #HamburgerMenu{
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  #Hamburger{
+    z-index: 3;
+    position: absolute;
+    max-width: 10vh;
+    bottom: 0;
+    margin-left: 1vw;
+  }
+  
+  #slideButton:hover {
+    background-color: #0056b3;
+  }
+  
+  #FoodMenu > p {
+    position: relative;
+    left: 8vw;
+  }
+
+  #InnerFoodMenu{
+    margin-left: 1vw;
+    margin-top: 2.5vh;
+    width: 23vw;
+    height: 95vh;
+    background-color: #6A9C5C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.cirkel{
+  font-family: "Oldenburg", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(0px, .7vw + .7vh, 64px);
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 35vh;
+  }
+
+  #CirkelContainer{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#c1{
+    left: 3vh;
+    top: 0vh;
+}
+
+#c2{
+    left: 1.5vh;
+    top: 10vh;
+}
+
+#c3{
+    left: 0;
+    top: 0vh;
+}
+
+#c4{
+    left: -1.5vh;
+    top: 10vh;
+}
+
+#c5{
+    left: -3vh;
+    top: 0vh;
+}
+
+#c1 > div{
+    background-color: #6a3e1e;
+}
+
+#c2 > div{
+    background-color: #595057;
+}
+
+#c3 > div{
+    background-color: #88e3de;
+}
+
+#c4 > div{
+    background-color: #f1e3c0;
+}
+
+#c5 > div{
+    background-color: #f4b63e;
+}
+
+#InnerFoodMenu button{
+position: relative;
+cursor: pointer;
+background-color: transparent;
+border: 0;
+}
+
+#FoodUpgrades{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 3vh;
+    z-index: 50;
+}
+
+.FoodUpgradeButton img {
+max-width:4vw ;
+}
+
+.FoodUpgradeButton span {
+    font-size: clamp(0px, 0.9vw + 0.9vh, 64px);
+    overflow: hidden;
+    }
+
+.FoodUpgradeButton div{
+    gap: 0.2vw;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    position: relative;
+    top: 5vh;
+    width: 20vw;
+    height: 7.5vh;
+    background-color: white;
+    z-index: 50;
+    border-radius: 15px;
+}
+
+.FoodUpgradeButton:hover > div{
+ background-color: rgb(136, 136, 136);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* coinfl;ip */
+
+  
+  button.adjustbet {
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f8e9a1;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+    border: 3px solid #222;
+    width: 300px;
+  }
+  
+  .popup-content {
+    position: relative;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #222;
+    width: 26px;
+    height: 26px;
+    color: #ff0000;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .coin {
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+    perspective: 1000px;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  
+  .face {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  
+  .front {
+    transform: rotateY(0deg);
+  }
+  
+  .back {
+    transform: rotateY(180deg);
+  }
+  
+  .coin.spin {
+    animation: flip 2s ease-in-out;
+  }
+  
+  @keyframes flip {
+    0%   { transform: rotateY(0deg); }
+    25%  { transform: rotateY(360deg); }
+    50%  { transform: rotateY(720deg); }
+    75%  { transform: rotateY(1080deg); }
+    100% { transform: rotateY(1440deg); }
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    align-items: flex-start;
+  }
+  
+  .side-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+
+
+  }
+  
+  .sign {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .center-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bet-display {
+    font-size: 20px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #999;
+    min-width: 80px;
+    text-align: center;
+  }
+
+  #coinButton {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    font-size: 3.5vw;; 
+    background-color:#4C2E05;
+  }
+  
+  /* einde coinflip */
