@@ -16,7 +16,7 @@
 
 <body>
     <!--Main UI-->
-    <img class="Achtergrond" src="fotos/background 1.jpeg">
+    <img class="Achtergrond" id="Achtergrond" src="fotos/background_1.jpeg">
     <div id="Topbar">
             <!--Displays voor info-->
         <p id="TierDisp">Tier: <span id="Tier">Zwerver</span></p>
@@ -25,8 +25,16 @@
     <div id="Sidebar">
         <div id="InnerSidebar"> <!--Innersidebar waar upgrades en euro per click in zit-->
             <p id="Upgrades">Upgrades</p>
-            <p id="EpcDisp"> <span id="Epc">1€</span>/ Click</p>
-            <!--Container van 1 upgrade-->
+
+            <p id="EpcDisp">    
+                <span id="Epc">1€</span>/ Click <span id="Multi">1x </span> <span id="TotalEpc">(1€)</span>
+            </p>
+
+            <p id="AutoEpcDisp" > 
+                <span id="AutoEpcValue">0€/  </span><span id="AutoEpcSpeedDisp">1</span> Sec <span id="Multi">1x </span><span id="TotalAutoEpc">(0€)</span>
+            </p> 
+            
+            <!--Container van 1 upgrade--> 
             <div class="UpgradeContainer">
                 <p class="OneClick">+1€/Click</p>
             <button class="Upgrade" onclick="buyupgrade1()">

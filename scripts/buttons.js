@@ -131,8 +131,8 @@ function buyupgrade4(){ // +15/sec
         {
             document.getElementById("Foto"+i).src = items[i].foto
             document.getElementById("NaamFood"+i).textContent = items[i].name +":"
-            document.getElementById("PrijsFood"+i).textContent = items[i].price + "€"
-            document.getElementById("MultiFood"+i).textContent = items[i].multiplier + "X"
+            document.getElementById("PrijsFood"+i).textContent = formatMoney(items[i].price) + "€"
+            document.getElementById("MultiFood"+i).textContent = formatMoney(items[i].multiplier) + "X"
         }
     }
 
@@ -140,14 +140,64 @@ function buyupgrade4(){ // +15/sec
         const itemMultiplier = typefoods[currenttab][button].multiplier;
         const itemPrice = typefoods[currenttab][button].price;
         const itemFoto = typefoods[currenttab][button].foto;
+        const itemTier = typefoods[currenttab][button].tier;
+        const itemName = typefoods[currenttab][button].name;
 
         if (money <= itemPrice){
             return;
         }
-
+        
         money = money-itemPrice
         foodmulti = itemMultiplier
         document.getElementById("clickimage").src = itemFoto
+        document.getElementById("Food").textContent = itemName
+        document.getElementById("Tier").textContent = itemTier
+
+
+
+        if (itemTier == "Zwerver"){ //Change Theme
+            document.getElementById("FoodMenu").style.backgroundColor = "#334A2C";
+            document.getElementById("InnerFoodMenu").style.backgroundColor = "#6A9C5C";
+            document.getElementById("Sidebar").style.backgroundColor = "#4C2E05";
+            document.getElementById("InnerSidebar").style.backgroundColor = "#8D724D";
+            document.getElementById("Bottombar").style.backgroundColor = "#4C2E05";
+            document.getElementById("Topbar").style.backgroundColor = "#405C37";
+            document.getElementById("Achtergrond").src = "fotos/background_1.jpeg";
+        } else if( itemTier == "Arm") {
+            document.getElementById("FoodMenu").style.backgroundColor = "#4C5816";
+            document.getElementById("InnerFoodMenu").style.backgroundColor = "#697A21";
+            document.getElementById("Sidebar").style.backgroundColor = "#424B54";
+            document.getElementById("InnerSidebar").style.backgroundColor = "#667584";
+            document.getElementById("Bottombar").style.backgroundColor = "#424B54";
+            document.getElementById("Topbar").style.backgroundColor = "#697A21";
+            document.getElementById("Achtergrond").src = "fotos/background_2.png";
+        } else if (itemTier == "Normaal") {
+            document.getElementById("FoodMenu").style.backgroundColor = "#0C3654";
+            document.getElementById("InnerFoodMenu").style.backgroundColor = "#124E78";
+            document.getElementById("Sidebar").style.backgroundColor = "#57CC99";
+            document.getElementById("InnerSidebar").style.backgroundColor = "#92F8CB";
+            document.getElementById("Bottombar").style.backgroundColor = "#57CC99";
+            document.getElementById("Topbar").style.backgroundColor = "#124E78";
+            document.getElementById("Achtergrond").src = "fotos/background_3.jpg";
+        } else if (itemTier == "Rijk") {
+            document.getElementById("FoodMenu").style.backgroundColor = "#684329";
+            document.getElementById("InnerFoodMenu").style.backgroundColor = "#8F5C38";
+            document.getElementById("Sidebar").style.backgroundColor = "#ECE4B7";
+            document.getElementById("InnerSidebar").style.backgroundColor = "#995F0F";
+            document.getElementById("Bottombar").style.backgroundColor = "#ECE4B7";
+            document.getElementById("Topbar").style.backgroundColor = "#8F5C38";
+            document.getElementById("Achtergrond").src = "fotos/background_4.jpg";
+        } else if(itemTier == "Legend") {
+            document.getElementById("FoodMenu").style.backgroundColor = "#334242";
+            document.getElementById("InnerFoodMenu").style.backgroundColor = "#5E807F";
+            document.getElementById("Sidebar").style.backgroundColor = "#EEC643";
+            document.getElementById("InnerSidebar").style.backgroundColor = "#8D724D";
+            document.getElementById("Bottombar").style.backgroundColor = "#EEC643";
+            document.getElementById("Topbar").style.backgroundColor = "#5E807F";
+            document.getElementById("Achtergrond").src = "fotos/background_final.png";
+        }
+
+        
         upd()
     }
 

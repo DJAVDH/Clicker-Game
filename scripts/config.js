@@ -63,7 +63,7 @@ let typefoods = {
 function formatMoney(amount) { //Formatting voor getallen
     if (amount >= 1e24) {
         return (amount / 1e24).toFixed(1) + 'SP'; //Septillion
-    } else if (amount >= 1e24) {
+    } else if (amount >= 1e21) {
         return (amount / 1e21).toFixed(1) + 'SX'; //Sextillion
     } else if (amount >= 1e21) {
         return (amount / 1e18).toFixed(1) + 'QN'; //Quantillion

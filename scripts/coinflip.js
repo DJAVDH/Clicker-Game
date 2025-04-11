@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (value < 0) {
         betAmount = Math.max(0, newBet);
       }
-
+      upd()
       updateBetDisplay();
     };
   });
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         money -= betAmount;
       }
-
+      upd()
       formatMoney(money);
       betAmount = 0;
       updateBetDisplay();

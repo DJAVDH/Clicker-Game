@@ -137,7 +137,7 @@ p{
 .OneClick{
     position: relative;
     top: 4vh;
-    left: 2vw;
+    left: 3vw;
 }
 
 .Upgrade > img{
@@ -147,10 +147,19 @@ p{
 }
 
 #EpcDisp{
-    bottom: 10vh;
-    margin-left: 8vw;
+    bottom: 12vh;
+    margin-left: 2vw;
     color: white;
     position: absolute; 
+    font-size: clamp(0px, 0.7vw + 0.7vh, 32px);  
+}
+
+#AutoEpcDisp{
+  bottom: 7vh;
+  margin-left: 2vw;
+  color: white;
+  position: absolute; 
+  font-size: clamp(0px, 0.7vw + 0.71vh, 32px);  
 }
 /*Bottom Bar voor alles onder Coinflip menu info settings hamburger bar voor slide menu*/
 #Bottombar{
@@ -522,8 +531,9 @@ max-width:4vw ;
     position: absolute;
     right: 20px;
     cursor: pointer;
-    font-size: 3.5vw;; 
-    background-color:#4C2E05;
+    font-size: 3.5vw;
+    background-color: transparent;
+    border: 0;
   }
   
   /* einde coinflip */
